@@ -33,8 +33,7 @@ func countries() []string {
 	return countriesCpy
 }
 
-func lol() {
-	num := 10
+func lol(num int) {
 	if num % 2 == 0 { //checks if number is even
 		fmt.Println("the number is even")
 	}  else {
@@ -144,6 +143,6 @@ func switchcase() {
 	}
 }
 func main() {
-	lol()
+	lol(10)
 	switchcase()
 }
