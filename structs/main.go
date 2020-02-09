@@ -1,6 +1,6 @@
 package main
 
-import "awesomeProject/structs/computer"
+import "github.com/learn-go/structs/computer"
 import "fmt"
 
 func main() {

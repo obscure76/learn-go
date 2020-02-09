@@ -1,8 +1,8 @@
 package main
 
 import (
-	"awesomeProject/geometry/rectangle"
 	"fmt"
+	"github.com/learn-go/geometry/rectangle"
 	"log"
 )
 
