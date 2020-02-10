@@ -1,22 +1,25 @@
 package main
+
 import (
 	"fmt"
 	"sync"
 )
-var x  = 0
-func increment(wg *sync.WaitGroup, ch chan bool) {
+
+func incrementLocal(wg *sync.WaitGroup, ch chan bool, xl *int) {
 	ch <- true
-	x = x + 1
-	<- ch
+	*xl = *xl + 1
+	<-ch
 	wg.Done()
 }
+
 func main() {
 	var w sync.WaitGroup
 	ch := make(chan bool, 1)
+	var xl int
 	for i := 0; i < 1000; i++ {
 		w.Add(1)
-		go increment(&w, ch)
+		go incrementLocal(&w, ch, &xl)
 	}
 	w.Wait()
-	fmt.Println("final value of x", x)
+	fmt.Println("final value of x", xl)
 }
