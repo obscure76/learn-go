@@ -11,4 +11,6 @@ func main() {
 	fmt.Println(time.Second / time.Millisecond)
 	var val = fmt.Sprint(time.Nanosecond / time.Nanosecond)
 	fmt.Println(val)
+	fmt.Println(int(time.Millisecond))
+	fmt.Println(int(time.Nanosecond))
 }
